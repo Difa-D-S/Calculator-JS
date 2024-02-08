@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Method Calculator</title>
+    <link rel="stylesheet" href="./Calculator.css">
+</head>
+<body>
+    
+    <div class="calculator">
+        <input type="text" id="result" readonly>
+        <div class="buttons">
+            <button onClick="Clear()">C</button>
+            <button onClick="Cal('7')">7</button>
+            <button onClick="Cal('8')">8</button>
+            <button onClick="Cal('9')">9</button>
+            <button onClick="Cal('/')">/</button>
+            <button onClick="Cal('4')">4</button>
+            <button onClick="Cal('5')">5</button>
+            <button onClick="Cal('6')">6</button>
+            <button onClick="Cal('*')">*</button>
+            <button onClick="Cal('1')">1</button>
+            <button onClick="Cal('2')">2</button>
+            <button onClick="Cal('3')">3</button>
+            <button onClick="Cal('-')">-</button>
+            <button onClick="Cal('0')">0</button>
+            <button onClick="Cal('.')">.</button>
+            <button onClick="equal()">=</button>
+            <button onClick="Cal('+')">+</button>
+            <button onClick="answer()">Del</button>
+        </div>
+    </div>
+
+
+
+    <script>
+        var currentValue = " ";
+        var results = document.getElementById("result");
+
+        function Cal(x){
+            currentValue = currentValue + x;                         // OR currentValue += x;                              
+            results.value = currentValue;
+        }
+
+        function equal(){
+            currentValue = eval(currentValue);
+            results.value = currentValue;
+        }
+
+        function Clear(){
+            currentValue = " ";
+            results.value = currentValue;
+        }
+
+       
+    </script>
+</body>
+</html>
