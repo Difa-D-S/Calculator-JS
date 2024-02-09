@@ -26,9 +26,9 @@
             <button onClick="Cal('-')">-</button>
             <button onClick="Cal('0')">0</button>
             <button onClick="Cal('.')">.</button>
-            <button onClick="equal()">=</button>
+            <button onClick="answer()">=</button>
             <button onClick="Cal('+')">+</button>
-            <button onClick="answer()">Del</button>
+            <button onClick="del()">Del</button>
         </div>
     </div>
 
@@ -43,13 +43,18 @@
             results.value = currentValue;
         }
 
-        function equal(){
+        function answer(){
             currentValue = eval(currentValue);
             results.value = currentValue;
         }
 
         function Clear(){
             currentValue = " ";
+            results.value = currentValue;
+        }
+
+        function del(){
+            currentValue = currentValue.substring(0, currentValue.length-1);
             results.value = currentValue;
         }
 
